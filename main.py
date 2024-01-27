@@ -3,7 +3,7 @@ import shutil
 import streamlit as st
 
 from pdf2image import convert_from_bytes
-from extract_texts import extract_texts
+from extract_texts import extract_text
 from qa import answer_question
 
 st.title('PDF Extractor and Explorer')
@@ -76,7 +76,7 @@ radio_button = st.radio("Select an action:", ['Extract texts', 'Answer questions
 
 if radio_button == 'Extract texts':
     if st.button('Extract'):
-        extract_texts(
+        extract_text(
             pdf_directory = temp_dir,
             pdf_filepath = None,
             extraction_dir = extraction_dir,

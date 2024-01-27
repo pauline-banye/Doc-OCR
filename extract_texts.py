@@ -3,9 +3,9 @@ import streamlit as st
 
 from extractor_obj import PDFextractor
 from zipfile import ZipFile
-from typing import List, Optional
+from typing import Optional
 
-def extract_texts(
+def extract_text(
         pdf_directory: Optional[str] = None,
         pdf_filepaths: Optional[str] = None,
         extraction_dir: str = '',

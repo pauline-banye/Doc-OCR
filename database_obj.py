@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-from typing import Dict, List, Optional, Tuple
+from typing import List, Optional, Tuple
 from faiss import IndexFlatIP
 from sentence_transformers import SentenceTransformer
 

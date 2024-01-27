@@ -2,7 +2,7 @@ from typing import List, Tuple
 from summarizer import Summarizer
 from database_obj import TextDB
 from llm import answer
-from extract_texts import extract_texts
+from extract_texts import extract_text
 import streamlit as st
 import os
 
@@ -21,27 +21,40 @@ def extraction_exists(
                         if not os.path.exists(all_csv_filepaths[i])]
     return unextracted_pdfs, all_csv_filepaths
 
-def answer_question(question: str,
-                    pdf_directory: str,
-                      extraction_dir: str,
-                      extraction_progress_text: str,
-                      chunk_extraction: bool = True):
+def answer_question(
+        question: str,
+        pdf_directory: str,
+        extraction_dir: str,
+        extraction_progress_text: str,
+        chunk_extraction: bool = True
+        ):
     
-    unextracted_pdf_filepaths, all_csv_filepaths = extraction_exists(pdf_directory, extraction_dir)
+    unextracted_pdf_filepaths, all_csv_filepaths = extraction_exists(
+        pdf_directory, 
+        extraction_dir
+    )
 
-    extract_texts(pdf_filepaths = unextracted_pdf_filepaths,
-                  extraction_dir = extraction_dir,
-                  progress_text = extraction_progress_text,
-                  enable_downloads = False,
-                  chunk_extraction = chunk_extraction)
+    extract_text(
+        pdf_filepaths = unextracted_pdf_filepaths,
+        extraction_dir = extraction_dir,
+        progress_text = extraction_progress_text,
+        enable_downloads = False,
+        chunk_extraction = chunk_extraction
+    )
     
     cache_dir = 'db'
-    db = TextDB.retrieve_cache(all_csv_filepaths, cache_dir)
+    db = TextDB.retrieve_cache(
+        all_csv_filepaths, 
+        cache_dir
+    )
 
     with st.spinner('Creating DB...'):
         if db == None:
             db = TextDB(all_csv_filepaths)
-            db.create_cache(all_csv_filepaths, cache_dir)
+            db.create_cache(
+                all_csv_filepaths, 
+                cache_dir
+            )
         
         else:
             df, index = db

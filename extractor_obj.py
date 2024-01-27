@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 
-from typing import List, Literal, Optional
+from typing import List
 from pdf2image import convert_from_bytes
 from pytesseract import image_to_string
 from tqdm import tqdm
