@@ -10,11 +10,18 @@
 - [Setting up the project](#setting-up-the-project)
   - [Download and install software](#1-download-and-install-software)
   - [Create virtual environment](#2-create-virtual-environment)
+- [Status of the project](#status)
+- [License information](#license)
 
 
 > ## Overview
 
 In recent years, technology for Document Understanding and Optical Character Recognition (OCR) has made huge strides. It offers powerful solutions to extract text and structured data from images and scanned documents. 
+
+<p align="center" width="100%">
+  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.edenai.co%2Fpost%2Fanalyze-easily-document-files-with-ai-optical-character-recognition-ocr&psig=AOvVaw36cJPVuZTKNJpe8ZtenAtW&ust=1706451183161000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCOjMraDg_YMDFQAAAAAdAAAAABAg" alt="site"/>
+</p>
+
 
 - **Efficiency Boost**: Implementing Document Understanding and OCR will streamline document processing, cutting down the time needed for data extraction.
 - **Improved Data Access**: Digitizing physical documents will centralize data storage, making it easier to find and retrieve information swiftly.
@@ -96,10 +103,17 @@ An exhaustive list can be found in the environment.yml file included in this pro
 **Alternative method**
 You can create the conda enviromnent from the environment.yml file.
 
-    conda env update -n <name of virtual environment> -f environment.yml
+    $ conda env update -n <name of virtual environment> -f environment.yml
 
 
+> ## Running the project
+>
+Type this command to run the project
 
+    $ streamlit run main.py
+
+
+#
 > ## Status
 >
 This project is a work in progress and is currently under development.
