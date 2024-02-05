@@ -12,7 +12,7 @@ from sentence_transformers import SentenceTransformer
 
 @st.cache_data
 def load_model():
-    mdl = SentenceTransformer('sentence-transformer/gtr-t5-xl')
+    mdl = SentenceTransformer('sentence-transformers/gtr-t5-xl')
     return mdl
 
 model = load_model()

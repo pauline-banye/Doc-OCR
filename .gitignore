@@ -188,7 +188,8 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
-
+llama/
+errors.txt
 
 # Translations
 *.mo

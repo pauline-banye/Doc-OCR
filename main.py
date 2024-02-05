@@ -4,7 +4,8 @@ import streamlit as st
 
 from pdf2image import convert_from_bytes
 from extract_texts import extract_text
-from qa import answer_question
+# from qa import answer_question as ans
+import qa
 
 st.title('PDF Extractor and Explorer')
 
@@ -86,8 +87,8 @@ if radio_button == 'Extract texts':
         )
 elif radio_button == 'Ask questions':
     text = st.text_input('Enter a question:')
-    if st.button('Ask'): 
-        answer_question(
+    if st.button('Ask'):
+        qa.answer_question(
             question = text,
             pdf_directory = temp_dir,
             extraction_dir = qa_extraction_dir,
